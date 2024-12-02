@@ -1,4 +1,4 @@
-textfile = open('advent_of_code/input_day_1_1.txt','r')
+textfile = open('advent_of_code/input_1.txt','r')
 list = textfile.read().split()
 list1 = []
 list2 = []
