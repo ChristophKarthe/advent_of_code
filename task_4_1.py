@@ -47,12 +47,12 @@ for i in range(2,(len(horizontal_list[0]))):
             break
         addingstring += horizontal_list[j][i-j]
     diagonal_list2.append(addingstring)
-for i in range(0, len(horizontal_list)):
+for i in range(1, len(horizontal_list)):
     addingstring = ""
     for j in range(-1, -(len(horizontal_list[0])),-1):
-        if i + abs(j) >= 140:
+        if i + abs(j) >= 141:
             break
-        addingstring += horizontal_list[i + abs(j)][j]
+        addingstring += horizontal_list[i + abs(j)-1][j]
     diagonal_list2.append(addingstring)
 superlist = [horizontal_list, vertical_list, diagonal_list, diagonal_list2]
 for items in superlist:
