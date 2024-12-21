@@ -24,17 +24,22 @@ array1 = array1new
 array2 = array2new
 array1.reverse()
 array2.reverse()
+
+dic = {}
 for elements in array1:
-    dic = {}
     dic[elements[0]] = 0
 for elements in array1:
     dic[elements[0]] += 1
 copyarray1 = []
-for elements in array1:
-    copyarray1.append(max(dic.items(), key=operator.itemgetter(1))[0])
+for i in range(0, len(dic)):
+    maxkey = max(dic.items(), key=operator.itemgetter(1))[0]
+    for i in range(0, max(dic.items(), key=operator.itemgetter(1))[1]):
+        for elements in array1:
+            if elements[0] == maxkey:
+                copyarray1.append(elements)
+                array1.pop(array1.index(elements))
     dic.pop(max(dic.items(), key=operator.itemgetter(1))[0])
 array1 = copyarray1
-print(array1)
 def checkarray(elements, array1):
     superIsSafe: bool = True
     for element in elements:
@@ -63,17 +68,14 @@ for elements in array2:
             dic[element] = 0
         for items in array1:
             if array1[array1.index(items)][0] in dic.keys() and array1[array1.index(items)][1] in dic.keys():
-                print(items)
                 add = dic[array1[array1.index(items)][1]]
                 dic[array1[array1.index(items)][0]] += add + 1
         copyelements = []
-        print(dic)
         for element in elements:
             copyelements.append(max(dic.items(), key=operator.itemgetter(1))[0])
             dic.pop(max(dic.items(), key=operator.itemgetter(1))[0])
         halfindex = math.ceil(len(copyelements)/2)-1
         addingarray.append(copyelements[halfindex])
-        print(copyelements)
 
 for elements in addingarray:
     sum += int(elements)
