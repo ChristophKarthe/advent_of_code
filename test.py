@@ -1,2 +1,3 @@
-for i in range(2, -1, -1):
-    print(i)
+newstring = "ssssssss"
+newlist = list(newstring)
+print("".join(newlist))

@@ -2,7 +2,7 @@
 import math
 import operator
 # Arrays befüllen
-textfile = open('./input_5.txt','r')
+textfile = open('./input_5_papa.txt','r')
 array1 = textfile.read().split("\n")
 array2 = []
 k = -1
